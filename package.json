@@ -1,0 +1,17 @@
+{
+  "name": "api-vendehumos",
+  "version": "1.0.0",
+  "description": "API con Express y endpoint de health",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node --env-file=.env src/server.js",
+    "dev": "node --env-file=.env --watch src/server.js"
+  },
+  "engines": {
+    "node": ">=20.6"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
