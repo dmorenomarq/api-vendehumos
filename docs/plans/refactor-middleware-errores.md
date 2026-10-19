@@ -19,7 +19,7 @@ Hoy el manejador de errores está escrito en línea dentro de `src/app.js` (lín
 | # | Tarea | Archivos | Min | Hecha |
 |---|-------|----------|-----|-------|
 | 1 | Crear la clase `ErrorMiddleware` con `handle_error(err, req, res, next)`. Traslada las tres ramas actuales sin cambios: `AppError` → `err.statusCode`, `entity.parse.failed` → 400 `JSON inválido`, resto → `console.error` y 500 `Error interno del servidor`. Exporta la clase. | `src/middlewares/error.middleware.js` | 8 | [x] |
-| 2 | En `app.js`, sustituir el handler en línea por `app.use(ErrorMiddleware.handle_error)` y quitar el `require` de `AppError`, que ya no se usa. Mantener el comentario sobre Express 5 y los handlers async. | `src/app.js` | 5 | [ ] |
+| 2 | En `app.js`, sustituir el handler en línea por `app.use(ErrorMiddleware.handle_error)` y quitar el `require` de `AppError`, que ya no se usa. Mantener el comentario sobre Express 5 y los handlers async. | `src/app.js` | 5 | [x] |
 | 3 | Escribir pruebas con `node:test` y `node:assert`, llamando a `handle_error` con un `res` falso. Cubrir los tres casos: `AppError(409, ...)`, error con `type: 'entity.parse.failed'` y error genérico, comprobando el 500 y que no se filtra el mensaje interno. | `src/middlewares/error.middleware.test.js` | 10 | [ ] |
 | 4 | Verificar con la API arrancada: JSON mal formado, `POST /auth/login` con credenciales erróneas y `POST /auth/register` con un email repetido. Comparar status y cuerpo con los de antes del refactor. | — | 7 | [ ] |
 
