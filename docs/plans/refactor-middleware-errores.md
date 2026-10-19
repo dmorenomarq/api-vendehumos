@@ -25,11 +25,11 @@ Hoy el manejador de errores está escrito en línea dentro de `src/app.js` (lín
 
 ## Criterios de aceptación
 
-- [ ] Las respuestas de la API (cuerpos y códigos de estado) son idénticas a las de antes.
-- [ ] `POST /auth/login` con credenciales inválidas devuelve 401 `{ "error": "Credenciales inválidas" }`.
-- [ ] `POST /auth/register` con un email ya registrado devuelve 409 `{ "error": "El email ya está registrado" }`.
-- [ ] Un body con JSON mal formado devuelve 400 `{ "error": "JSON inválido" }`.
-- [ ] Un error no controlado devuelve 500 `{ "error": "Error interno del servidor" }`, sin mostrar el mensaje original, y se registra con `console.error`.
-- [ ] `app.js` no contiene lógica de errores; solo monta `ErrorMiddleware.handle_error`, y lo hace después de `routes`.
-- [ ] `src/middlewares/error.middleware.js` contiene una clase con método en `snake_case`, usa CommonJS, exporta la clase y no usa librerías externas.
-- [ ] `node --test` pasa con las pruebas nuevas.
+- [x] Las respuestas de la API (cuerpos y códigos de estado) son idénticas a las de antes.
+- [x] `POST /auth/login` con credenciales inválidas devuelve 401 `{ "error": "Credenciales inválidas" }`.
+- [x] `POST /auth/register` con un email ya registrado devuelve 409 `{ "error": "El email ya está registrado" }`.
+- [x] Un body con JSON mal formado devuelve 400 `{ "error": "JSON inválido" }`.
+- [x] Un error no controlado devuelve 500 `{ "error": "Error interno del servidor" }`, sin mostrar el mensaje original, y se registra con `console.error`.
+- [x] `app.js` no contiene lógica de errores; solo monta `ErrorMiddleware.handle_error`, y lo hace después de `routes`.
+- [x] `src/middlewares/error.middleware.js` contiene una clase con método en `snake_case`, usa CommonJS, exporta la clase y no usa librerías externas.
+- [x] `node --test` pasa con las pruebas nuevas.
