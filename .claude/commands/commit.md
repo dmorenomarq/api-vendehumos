@@ -8,8 +8,8 @@ Crea un commit con los cambios actuales siguiendo estas convenciones.
 ## Contexto
 
 - Estado: !`git status --short`
-- Cambios: !`git diff HEAD`
-- Commits recientes (para igualar el estilo): !`git log --oneline -10`
+- Cambios: !`git diff --cached`
+- Commits recientes (para igualar el estilo): !`git log --oneline -10 2>/dev/null || echo "(primer commit)"`
 
 ## Convenciones
 
@@ -27,6 +27,7 @@ Crea un commit con los cambios actuales siguiendo estas convenciones.
 3. Si los cambios mezclan propósitos distintos, propón dividirlos en varios commits y pregunta antes de hacerlo.
 4. Añade con `git add` solo los archivos relevantes (no uses `git add -A` a ciegas) y crea el commit.
 5. No hagas `push`, `--amend` ni `--no-verify`, salvo que el usuario lo pida.
-6. Muestra al final el mensaje del commit creado.
+6. Usa la tool `AskUserQuestion` para mostrarle al usuario el mensaje del commit, y que decida si le parece bien. Si te da el ok, continua. Si te dice que no, proponle otro mensaje y vuelve a preguntarle.
+7. Muestra al final el mensaje del commit creado.
 
 $ARGUMENTS
